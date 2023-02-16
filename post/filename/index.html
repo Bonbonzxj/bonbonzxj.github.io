@@ -1,0 +1,472 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    
+
+    <title> | Bonbon的博客小站</title>
+    <meta property="og:title" content=" - Bonbon的博客小站">
+    <meta property="og:type" content="article">
+        
+        
+    <meta name="Keywords" content="python,推荐系统,深度学习">
+    <meta name="description" content="">
+        
+    <meta name="author" content="Bonbon">
+    <meta property="og:url" content="https://Bonbonzxj.github.io/post/filename/">
+    <link rel="shortcut icon" href='/favicon.ico'  type="image/x-icon">
+
+    <link rel="stylesheet" href='/css/normalize.css'>
+    <link rel="stylesheet" href='/css/style.css'>
+    <script type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    
+    
+    
+    
+    
+    
+        <link rel="stylesheet" href='/css/douban.css'>
+    
+        <link rel="stylesheet" href='/css/other.css'>
+    
+</head>
+
+<body>
+    <header id="header" class="clearfix">
+    <div class="container">
+        <div class="col-group">
+            <div class="site-name ">
+                
+                    <a id="logo" href="https://Bonbonzxj.github.io/">
+                        Bonbon的博客小站
+                    </a>
+                
+                <p class="description">python、推荐系统、深度学习</p>
+            </div>
+            <div>
+                <nav id="nav-menu" class="clearfix">
+                    <a class="current" href="https://Bonbonzxj.github.io/">首页</a>
+                    
+                    <a  href="https://Bonbonzxj.github.io/archives/" title="归档">归档</a>
+                    
+                    <a  href="https://Bonbonzxj.github.io/about/" title="关于">关于</a>
+                    
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+    <div id="body">
+        <div class="container">
+            <div class="col-group">
+
+                <div class="col-8" id="main">
+                    
+<div class="res-cons">
+    <style type="text/css">
+    .post-toc {
+        position: fixed;
+        width: 200px;
+        margin-left: -210px;
+        padding: 5px 10px;
+        font-family: Athelas, STHeiti, Microsoft Yahei, serif;
+        font-size: 12px;
+        border: 1px solid rgba(0, 0, 0, .07);
+        border-radius: 5px;
+        background-color: rgba(255, 255, 255, 0.98);
+        background-clip: padding-box;
+        -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
+        box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
+        word-wrap: break-word;
+        white-space: nowrap;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        z-index: 999;
+        cursor: pointer;
+        max-height: 70%;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .post-toc .post-toc-title {
+        width: 100%;
+        margin: 0 auto;
+        font-size: 20px;
+        font-weight: 400;
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+    .post-toc .post-toc-content {
+        font-size: 15px;
+    }
+
+    .post-toc .post-toc-content>nav>ul {
+        margin: 10px 0;
+    }
+
+    .post-toc .post-toc-content ul {
+        padding-left: 20px;
+        list-style: square;
+        margin: 0.5em;
+        line-height: 1.8em;
+    }
+
+    .post-toc .post-toc-content ul ul {
+        padding-left: 15px;
+        display: none;
+    }
+
+    @media print,
+    screen and (max-width:1057px) {
+        .post-toc {
+            display: none;
+        }
+    }
+</style>
+<div class="post-toc" style="position: absolute; top: 188px;">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#一准备工作">一、准备工作</a></li>
+    <li><a href="#二mac安装hugo">二、Mac安装hugo</a>
+      <ul>
+        <li><a href="#创建站点"><strong>创建站点</strong></a></li>
+      </ul>
+    </li>
+    <li><a href="#三安装hugo主题">三、安装Hugo主题</a></li>
+  </ul>
+</nav>
+    </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        var postToc = $(".post-toc");
+        if (postToc.length) {
+            var leftPos = $("#main").offset().left;
+            if (leftPos < 220) {
+                postToc.css({ "width": leftPos - 10, "margin-left": (0 - leftPos) })
+            }
+
+            var t = postToc.offset().top - 20,
+                a = {
+                    start: {
+                        position: "absolute",
+                        top: t
+                    },
+                    process: {
+                        position: "fixed",
+                        top: 20
+                    },
+                };
+            $(window).scroll(function () {
+                var e = $(window).scrollTop();
+                e < t ? postToc.css(a.start) : postToc.css(a.process)
+            })
+        }
+
+        if ($("#TableOfContents").children().length < 1) {
+            $(".post-toc").remove();
+        }
+    })
+</script>
+    <article class="post">
+        <header>
+            <h1 class="post-title"></h1>
+        </header>
+        <date class="post-meta meta-date">
+            1年1月1日
+        </date>
+        
+        
+        <div class="post-meta">
+            <span id="busuanzi_container_page_pv">|<span id="busuanzi_value_page_pv"></span><span>
+                    阅读</span></span>
+        </div>
+        
+        
+        <div class="post-content">
+            <h1 id="第零章建站教程">第零章——建站教程</h1>
+<p>参考教程：<a href="https://blog.csdn.net/qq_39618959/article/details/118443054">MacOs使用hugo、github搭建个人博客</a>&amp;&amp;<a href="https://zhuanlan.zhihu.com/p/486152749">使用Hugo搭建个人博客Mac+Docker</a></p>
+<ul>
+<li>GitHub 官方使用建议和限制，在使用的时候项目和网站的大小不要超过 1GB，也不要过于频繁的更新网站的内容（每小时不超过 10 个版本），每个月的也要注意带宽使用上限为 100GB。
+<ul>
+<li>中小型博客或项目主页的最佳选项之一。</li>
+</ul>
+</li>
+<li>Hugo 依靠Go语言进行开发，生成静态html非常快
+<ul>
+<li>支持Markdown</li>
+<li>生成的页面速度为秒级</li>
+<li>生成的静态文件可以托管在各大平台（绑定域名即可访问）</li>
+</ul>
+</li>
+</ul>
+<h2 id="一准备工作">一、准备工作</h2>
+<ul>
+<li>
+<p>1、在个人主界面里选择创建一个新的 Repository</p>
+<blockquote>
+<p>Repository name 的位置填写域名，格式是 <code>username.GitHub.io</code></p>
+<p>官方说如果你的username中有大写字母，在创建库的时候必须小写，不过实际上没什么影响。</p>
+</blockquote>
+</li>
+<li>
+<p>2、安装brew</p>
+</li>
+</ul>
+<blockquote>
+<p>安装brew</p>
+<ul>
+<li>
+<p>官网命令</p>
+<p>/bin/bash -c &ldquo;$(curl -fsSL <a href="https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)%22">https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)&quot;</a></p>
+<p>报错：fatal: unable to access &lsquo;<a href="https://github.com/Homebrew/brew/'">https://github.com/Homebrew/brew/'</a>: SSL: no alternative certificate subject name matches target host name &lsquo;github.com&rsquo;
+Failed during: git fetch &ndash;force origin</p>
+</li>
+<li>
+<p>其他教程命令</p>
+<ul>
+<li>
+<p>/usr/bin/ruby -e &ldquo;$(curl -fsSL <a href="https://cdn.jsdelivr.net/gh/ineo6/homebrew-install/install)%22">https://cdn.jsdelivr.net/gh/ineo6/homebrew-install/install)&quot;</a></p>
+<p>报错：curl: (7) Failed to connect to cdn.jsdelivr.net port 443: Operation timed out</p>
+</li>
+<li>
+<p>/bin/zsh -c &ldquo;$(curl -fsSL <a href="https://gitee.com/cunkai/HomebrewCN/raw/master/Homebrew.sh)%22">https://gitee.com/cunkai/HomebrewCN/raw/master/Homebrew.sh)&quot;</a></p>
+<p>是一个安装脚本，亲测有效</p>
+<p>参考文章：https://blog.csdn.net/m0_48895571/article/details/123897554</p>
+</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<h2 id="二mac安装hugo">二、Mac安装hugo</h2>
+<pre tabindex="0"><code>$ brew install hugo
+</code></pre><blockquote>
+<p>hugo version可查看是否已经安装好</p>
+</blockquote>
+<h3 id="创建站点"><strong>创建站点</strong></h3>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span> $ hugo new site myblog（自定义名称）
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>自定义名称为在当前目录下生成文件夹名，也是你的网站的大本营，后续大部分的操作都在这个文件夹下进行，此目录在下文中我统称为根目录。</p>
+</blockquote>
+<p>
+        <img class="mx-auto" alt="" src="https://pic3.zhimg.com/80/v2-e24ba05605795efe1d4daa7650a1341a_1440w.jpg" />   
+    </p>
+<p>运行</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>$ cd myblog
+</span></span><span style="display:flex;"><span>$ hugo server
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="三安装hugo主题">三、安装Hugo主题</h2>
+<ul>
+<li>
+<p>可在<a href="https://themes.gohugo.io/">hugo官网主题</a>进行下载主题</p>
+<p>可以使用git命令对主题进行克隆，注意，下载的主题要放在博客根目录的themes目录下。</p>
+<p>在根目录下执行命令</p>
+<pre tabindex="0"><code>hugo server -t hugo-tranquilpeak-theme --buildDrafts
+</code></pre><blockquote>
+<p>其中hugo-tranquilpeak-theme为下载的主题名称,，成功会返回localhost:1313</p>
+<p>在浏览器中输入:localhost:1313,如果能正常显示，说明在本地服务器运行已经没问题。</p>
+</blockquote>
+</li>
+<li>
+<p>选用别人做的主题</p>
+<p>选好中意的主题了，那么就一定要看作者的配置介绍</p>
+<blockquote>
+<p>这个配置介绍一般都是介绍如何配置config.toml，但这个介绍可能不够全，</p>
+<p>那么就要自己看clone下来的主题中这个文件夹exampleSite中的config.toml。</p>
+<p>有的主题还有full-config.toml,这个内容更全面。</p>
+<p>以我使用的主题为例，路径结构为：themes\hello-friend-ng\exampleSite\config.toml</p>
+<p><a href="https://blog.csdn.net/UntilTheCore/article/details/105806863">参考博客_详细解读配置内容</a></p>
+</blockquote>
+<pre tabindex="0"><code>$ cd myblog
+$ git clone https://github.com/flysnow-org/maupassant-hugo themes/maupassant
+</code></pre><blockquote>
+<p>报错：fatal: unable to access &lsquo;<a href="https://github.com/flysnow-org/maupassant-hugo/'">https://github.com/flysnow-org/maupassant-hugo/'</a>: SSL: no alternative certificate subject name matches target host name &lsquo;github.com&rsquo;</p>
+<p>找了半天没找到解答，多试着clone几次就好了</p>
+</blockquote>
+<ul>
+<li>baseurl：配置站点基址，如果要放在github上或者自己的云服务器上，请正确配置地址，否则出了能访问主页，其他地方都是 404</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+
+        
+<div class="post-archive">
+    <ul class="post-copyright">
+        <li><strong>原文作者：</strong><a rel="author" href="https://Bonbonzxj.github.io/">Bonbon</a></li>
+        <li style="word-break:break-all"><strong>原文链接：</strong><a href="https://Bonbonzxj.github.io/post/filename/">https://Bonbonzxj.github.io/post/filename/</a></li>
+        <li><strong>版权声明：</strong>本作品采用<a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议</a>进行许可，非商业转载请注明出处（作者，原文链接），商业转载请联系作者获得授权。</li>
+    </ul>
+</div>
+<br/>
+
+
+
+        
+
+
+        <div class="post-meta meta-tags">
+            
+            没有标签
+            
+        </div>
+    </article>
+    
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "yourdiscussshortname" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    
+    
+    <div class="post bg-white">
+      <script src="https://utteranc.es/client.js"
+            repo= "your github repo"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+      </script>
+    </div>
+    
+    
+    
+
+</div>
+
+                    <footer id="footer">
+    <div>
+        &copy; 2023 <a href="https://Bonbonzxj.github.io/">Bonbon的博客小站 By Bonbon</a>
+        
+    </div>
+    <br />
+    <div>
+        <div class="github-badge">
+            <a href="https://gohugo.io/" target="_black" rel="nofollow"><span class="badge-subject">Powered by</span><span class="badge-value bg-blue">Hugo</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://www.flysnow.org/" target="_black"><span class="badge-subject">Design by</span><span class="badge-value bg-brightgreen">飞雪无情</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://github.com/flysnow-org/maupassant-hugo" target="_black"><span class="badge-subject">Theme</span><span class="badge-value bg-yellowgreen">Maupassant</span></a>
+        </div>
+    </div>
+</footer>
+
+
+    
+    
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [['$', '$']],
+                processEscapes: true
+                }
+            };
+    </script>
+    <script src='//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src='/js/totop.js?v=0.0.0' async=""></script>
+    <script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
+
+
+
+
+    <script src='/js/douban.js'></script>
+
+                </div>
+
+                <div id="secondary">
+    <section class="widget">
+        <form id="search" action='https://Bonbonzxj.github.io/search' method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+      
+      <input type="text" name="q" maxlength="20" placeholder="Search">
+      <input type="hidden" name="sitesearch" value="https://Bonbonzxj.github.io/">
+      <button type="submit" class="submit icon-search"></button>
+</form>
+    </section>
+    
+    <section class="widget">
+        <h3 class="widget-title">最近文章</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="https://Bonbonzxj.github.io/post/filename/" title=""></a>
+    </li>
+    
+</ul>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title"><a href='/categories/'>分类</a></h3>
+<ul class="widget-list">
+    
+</ul>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title"><a href='/tags/'>标签</a></h3>
+<div class="tagcloud">
+    
+</div>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title">其它</h3>
+        <ul class="widget-list">
+            <li><a href="https://Bonbonzxj.github.io/index.xml">文章 RSS</a></li>
+        </ul>
+    </section>
+</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
